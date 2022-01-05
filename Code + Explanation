@@ -1,0 +1,21 @@
+create a pointer to point a previous Node and initilialize it with null.
+start while loop with the condition with the head should not equal to null. now inside while loop create the pointer to point next code. and in next line head pointer should point 
+to previous node to connect it. now put prev = head so that previous node & headd node should point to same node. not forward head node.
+
+class Solution {
+public:
+    ListNode* reverseList(ListNode* head) {
+      /*  if(head==NULL){
+            return head;
+        }*/
+        
+        ListNode* prev = NULL;
+        while(head!=NULL){
+           ListNode* next_Node = head->next;
+            head->next = prev;
+            prev = head;
+            head = next_Node;
+        }
+        return prev;
+    }
+};
